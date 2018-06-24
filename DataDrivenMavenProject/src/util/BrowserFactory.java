@@ -32,9 +32,12 @@ public class BrowserFactory {
 		else if(browserName.equalsIgnoreCase("chrome"))
 		{
 			//System.setProperty("webdriver.chrome.driver", "C:/auto2/chromedriver.exe");
+			
 			System.setProperty("webdriver.chrome.driver",".\\drivers\\chromedriver.exe");
 
+
 			driver = new ChromeDriver();
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		}
 		
 		driver.get(url);
